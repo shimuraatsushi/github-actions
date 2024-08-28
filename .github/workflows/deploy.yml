@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.versoin }}
       - run: npm ci
+      - name: execute echo
+        uses: ./.github/workflows/actions/echo
       - name: deploy
         uses: serverless/github-action@v3.2
         with:
