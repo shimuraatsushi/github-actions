@@ -24,7 +24,7 @@ jobs:
       - name: execute echo
         uses: ./.github/workflows/actions/echo
         with:
-          environment: production
+          environment: staging
       - name: deploy
         uses: serverless/github-action@v3.2
         with:
