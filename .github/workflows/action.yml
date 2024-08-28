@@ -1,0 +1,6 @@
+runs:
+  using: "composite"
+  steps:
+    - id: random-number-generator
+      run: echo "##############################################"
+      shell: bash
