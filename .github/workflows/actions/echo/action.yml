@@ -1,6 +1,17 @@
+inputs:
+  environment:
+    description: 'hogehoge'
+    required: true
+    default: staging
+
 runs:
   using: "composite"
   steps:
     - id: random-number-generator
-      run: echo "##############################################"
+      if: ${{ inputs.environment == 'staging' }}
+      run: echo 'staging'
+      shell: bash
+    - id: random-number-generator
+      if: ${{ inputs.environment == 'production' }}
+      run: echo 'production'
       shell: bash
